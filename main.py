@@ -47,7 +47,11 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://todoappbackend-cq8x-preprod-preprod-sat-va-it.moltern.com",
+    ],
+    allow_origin_regex=r"https://.*\.moltern\.com",
     allow_methods=["*"],
     allow_headers=["*"],
 )
