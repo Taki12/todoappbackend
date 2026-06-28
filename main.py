@@ -61,6 +61,10 @@ class TodoCreate(BaseModel):
 
 # ── Routes ───────────────────────────────────────────────────────────────────
 
+@app.get("/")
+def health():
+    return {"status": "ok"}
+
 @app.get("/api/todos")
 def list_todos():
     with get_conn() as conn:
